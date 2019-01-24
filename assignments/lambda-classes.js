@@ -19,7 +19,7 @@ class Instructor extends Person {
     constructor(instructorAttributes) {
         super(instructorAttributes);
         this.specialty = instructorAttributes.specialty;
-        this.favLanguage = instructorAttributes.favLanguag;
+        this.favLanguage = instructorAttributes.favLanguage;
         this.catchPhrase = instructorAttributes.catchPhrase;
     }
 
@@ -27,8 +27,8 @@ class Instructor extends Person {
         return `today we are learning about ${subject}`;
     }
 
-    grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}`;
+    grade(subject) {
+        return `${Student.name} receives a perfect score on ${subject}`;
     }
 }
 
@@ -57,7 +57,7 @@ class Student extends Person {
 
 
 
-class ProjectMananger extends Instructor {
+class ProjectManager extends Instructor {
     constructor(PMAttributes) {
         super(PMAttributes);
         this.gradClassName = PMAttributes.gradClassName;
@@ -93,12 +93,20 @@ class ProjectMananger extends Instructor {
 
 
   const Josh = new Instructor({
+    name: 'Josh',
+    age: 32,
+    location: 'AZ',
+    gender: 'male',
     specialty: 'redux',
     favLanguage: 'JavaScript',
     catchPhrase: 'Big boss'
   });
 
   const Ryan = new Instructor({
+    name: 'Ryan',
+    age: 36,
+    location: 'CA',
+    gender: 'male',
     specialty: 'CSS',
     favLanguage: 'Javascript',
     catchPhrase: 'Lets get into it!'
@@ -107,12 +115,21 @@ class ProjectMananger extends Instructor {
 
 
   const Jawad = new Student({
+    name: 'Jawad',
+    age: 18,
+    location: 'OR',
+    gender: 'male',
     previousBackground: 'college',
     className: 'Web17',
     favSubjects: ['HTML', 'CSS']
   });
 
+
   const Randy = new Student({
+    name: 'Randy',
+    age: 21,
+    location: 'CA',
+    gender: 'male',
     previousBackground: 'McDonalds',
     className: 'Web17',
     favSubjects: ['JS', 'Python']
@@ -121,11 +138,41 @@ class ProjectMananger extends Instructor {
 
 
   const Jordan = new ProjectManager({
+    name: 'Jordan',
+    age: 26,
+    location: 'CA',
+    gender: 'male',
+    specialty: 'JS',
+    favLanguage: 'Javascript',
+    catchPhrase: 'How was your day?',
     gradClassName: 'CS10',
     favInstructor: 'Josh'
   });
 
   const Guy = new ProjectManager({
+    name: 'Guy',
+    age: 85,
+    location: 'CA',
+    gender: 'male',
+    specialty: 'Node.js',
+    favLanguage: 'Javascript',
+    catchPhrase: 'Jet fuel cant melt steel beams',
     gradClassName: 'CS90',
     favInstructor: 'Ryan'
   });
+
+
+
+  /* Uncomment to see results (all work) ----------------------------
+
+  console.log(Joe);
+  console.log(Bob);
+  console.log(Josh);
+  console.log(Ryan);
+  console.log(Jawad);
+  console.log(Randy);
+  console.log(Jordan);
+  console.log(Guy);
+  */
+
+ 
