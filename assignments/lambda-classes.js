@@ -9,9 +9,11 @@ class Person {
     }
 
     speak() {
-        console.log(`Hello my name is ${this.name}, I am from ${this.location}`)
+        return `Hello my name is ${this.name}, I am from ${this.location}`;
 }
 }
+
+
 
 class Instructor extends Person {
     constructor(instructorAttributes) {
@@ -22,13 +24,15 @@ class Instructor extends Person {
     }
 
     demo(subject) {
-        console.log(`today we are learning about ${subject}`)
+        return `today we are learning about ${subject}`;
     }
 
     grade(student, subject) {
-        console.log(`${student.name} receives a perfect score on ${subject}`)
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 }
+
+
 
 class Student extends Person {
     constructor(studentAttributes) {
@@ -39,7 +43,7 @@ class Student extends Person {
 }
 
     listsSubjects() {
-        console.log(`${this.favSubjects}`);
+        return `${this.favSubjects}`;
     }
 
     PRAssignment(subject) {
@@ -51,6 +55,8 @@ class Student extends Person {
     }
 }
 
+
+
 class ProjectMananger extends Instructor {
     constructor(PMAttributes) {
         super(PMAttributes);
@@ -59,17 +65,67 @@ class ProjectMananger extends Instructor {
     }
 
     standUp(channel) {
-        `{}`
+       return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
+    }
+
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
 
-// #### Project Mananger
 
-// * Now that we have instructors and students, we'd be nowhere without our PM's
-// * ProjectManagers are extensions of Instructors
-// * ProjectManagers have the following uniqe props:
-//   * `gradClassName`: i.e. CS1
-//   * `favInstructor`: i.e. Sean
-// * ProjectManangers have the following Methods:
-//   * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-//   * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
+  //-------------vvvvvvvvv-------------Objects------------vvvvvvvv----------------------
+
+  const Joe = new Person({
+    name: 'joe',
+    age: 42,
+    location: 'portland',
+    gender: 'male'
+  });
+
+  const Bob = new Person({
+    name: 'bob',
+    age: 24,
+    location: 'switzerland',
+    gender: 'male'
+  });
+
+
+
+  const Josh = new Instructor({
+    specialty: 'redux',
+    favLanguage: 'JavaScript',
+    catchPhrase: 'Big boss'
+  });
+
+  const Ryan = new Instructor({
+    specialty: 'CSS',
+    favLanguage: 'Javascript',
+    catchPhrase: 'Lets get into it!'
+  });
+
+
+
+  const Jawad = new Student({
+    previousBackground: 'college',
+    className: 'Web17',
+    favSubjects: ['HTML', 'CSS']
+  });
+
+  const Randy = new Student({
+    previousBackground: 'McDonalds',
+    className: 'Web17',
+    favSubjects: ['JS', 'Python']
+  });
+
+
+
+  const Jordan = new ProjectManager({
+    gradClassName: 'CS10',
+    favInstructor: 'Josh'
+  });
+
+  const Guy = new ProjectManager({
+    gradClassName: 'CS90',
+    favInstructor: 'Ryan'
+  });
